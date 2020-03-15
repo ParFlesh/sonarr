@@ -12,6 +12,11 @@ RUN apt-get update && \
     chown -R 1001:0 /sonarr && \
     chmod -R g=u /sonarr
 
+ADD test.sh /sonarr/
+
+RUN chmod 755 /sonarr/test.sh && \
+    chown 1001:0 /sonarr/test.sh
+
 FROM ubuntu:rolling
 MAINTAINER ParFlesh
 
