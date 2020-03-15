@@ -11,7 +11,7 @@ i=0
 
 until [ $i -ge $MAX ]
 do
-  HTTP_CODE=$(curl -sL -w "%{http_code}\\n" "http://127.0.0.1:8080/" -o /dev/null)
+  HTTP_CODE=$(curl -sL -w "%{http_code}\\n" "http://127.0.0.1:8989/" -o /dev/null)
   [ $? -eq 0 ] && break
   i=$((i+1))
   sleep 5
