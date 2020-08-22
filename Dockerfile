@@ -8,7 +8,7 @@ RUN apt-get update && \
     if [ "latest" != "$SONARR_VERSION" ];then VERSION=$SONARR_VERSION ; else VERSION=$(curl -sX GET https://services.sonarr.tv/v1/download/${SONARR_BRANCH}?version=3 | jq -r '.version');fi && \
     curl -L "https://download.sonarr.tv/v3/${SONARR_BRANCH}/${VERSION}/Sonarr.${SONARR_BRANCH}.${VERSION}.linux.tar.gz" | tar zxvf - && \
     mv Sonarr* sonarr && \
-    curl -L "https://mediaarea.net/repo/deb/repo-mediaarea_1.0-12_all.deb" -o /sonarr/mediaarea.deb && \
+    curl -L "https://mediaarea.net/repo/deb/repo-mediaarea_1.0-13_all.deb" -o /sonarr/mediaarea.deb && \
     chown -R 1001:0 /sonarr && \
     chmod -R g=u /sonarr
 
