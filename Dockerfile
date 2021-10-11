@@ -32,6 +32,6 @@ RUN apt-get update && \
 
 EXPOSE 8989
 VOLUME ["/config"]
-WORKDIR /sonarr
+WORKDIR /config
 ENTRYPOINT ["/usr/bin/mono", "/usr/lib/sonarr/bin/Sonarr.exe"]
 CMD ["-nobrowser", "-data=/config"]
