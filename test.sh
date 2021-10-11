@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-mono --debug Sonarr.exe -nobrowser -data=/config &
+/usr/bin/mono --debug /usr/lib/sonarr/bin/Sonarr.exe -nobrowser -data=/config &
 
 export DEBIAN_FRONTEND=noninteractive
 apt-get -q update
