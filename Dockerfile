@@ -1,10 +1,10 @@
-FROM ubuntu:latest as artifact
+FROM ubuntu:focal as artifact
 
 RUN apt-get update && \
     apt-get install -y curl jq && \
     curl -o /repo-mediaarea.deb https://mediaarea.net/repo/deb/repo-mediaarea_1.0-19_all.deb
 
-FROM ubuntu:latest
+FROM ubuntu:focal
 LABEL maintainer='ParFlesh'
 
 COPY --chown=1001:0 --from=artifact /repo-mediaarea.deb /repo-mediaarea.deb
